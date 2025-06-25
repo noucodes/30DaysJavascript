@@ -1,0 +1,54 @@
+:root {
+  --base: #ffffff;
+  --spacing: 10px;
+  --blur: 0px;
+  --border-radius: 0px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  font-size: 2rem;
+}
+
+img {
+  width: 70%;
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+  border-radius: var(--border-radius);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  gap: 50px;
+}
+
+.spacing,
+.blur,
+.border-radius,
+.base {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.base input {
+  width: 150px;
+  border: none;
+  background-color: transparent;
+}

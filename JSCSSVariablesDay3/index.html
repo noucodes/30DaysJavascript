@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>JS Clock</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h2>Update CSS Variable with <span>JS</span></h2>
+    <div class="controls">
+      <div class="spacing">
+        <label for="spacing">Spacing:</label>
+        <input
+          type="range"
+          name="spacing"
+          min="10"
+          max="200"
+          value="10"
+          data-sizing="px"
+        />
+      </div>
+      <div class="blur">
+        <label for="blur">Blur:</label>
+        <input
+          type="range"
+          name="blur"
+          min="0"
+          max="200"
+          value="0"
+          data-sizing="px"
+        />
+      </div>
+      <div class="border-radius">
+        <label for="border-radius">Border Radius:</label>
+        <input
+          type="range"
+          name="border-radius"
+          min="0"
+          max="50"
+          value="0"
+          data-sizing="px"
+        />
+      </div>
+      <div class="base">
+        <label for="base">Base Color:</label>
+        <input type="color" name="base" value="#ffffff" />
+      </div>
+    </div>
+
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDd6AszpuAJMtbrl6miNDuQwLaDPrfu3j5qw&s"
+      alt=""
+    />
+    <script>
+      const inputs = document.querySelectorAll("input");
+      function handleUpdate() {
+        const suffix = this.dataset.sizing || "";
+        document.documentElement.style.setProperty(
+          `--${this.name}`,
+          this.value + suffix
+        );
+      }
+      inputs.forEach((input) => input.addEventListener("change", handleUpdate));
+    </script>
+  </body>
+</html>
